@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cyberpink: #ff2a6d;
+  --color-cyberblue-light: #d1f7ff;
+  --color-cyberblue: #05d9e8;
+  --color-cyberblue-dark: #005678;
+  --color-cyberdark: #01012b;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+    'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Cyberpunk theme elements */
+.cyberpunk-border {
+  border: 1px solid var(--color-cyberblue);
+  box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+}
+
+.cyberpunk-glow {
+  text-shadow: 0 0 5px var(--color-cyberblue), 0 0 10px var(--color-cyberblue);
+}
+
+.cyberpunk-pink-glow {
+  text-shadow: 0 0 5px var(--color-cyberpink), 0 0 10px var(--color-cyberpink);
+}
+
+/* Markdown styling */
+.prose {
+  @apply text-gray-200;
+}
+
+.prose a {
+  @apply text-cyan-400 hover:text-cyan-300 no-underline;
+}
+
+.prose strong {
+  @apply text-white font-bold;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply text-white font-bold;
+}
+
+.prose code {
+  @apply bg-gray-700 text-cyan-300 px-1 py-0.5 rounded;
+}
+
+.prose pre {
+  @apply bg-gray-800 p-4 rounded-md overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-gray-200;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-cyan-600 pl-4 italic;
+}
+
+.prose ul, .prose ol {
+  @apply pl-6;
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .main-layout {
+    @apply flex-col;
+  }
+  
+  .column {
+    @apply w-full;
+  }
+}
